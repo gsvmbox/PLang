@@ -1,0 +1,25 @@
+// passptr.cpp
+// передача аргумента по указателю
+#include <iostream>
+using namespace std;
+
+int main ( )
+{
+  void centimize ( double* ); // прототип функции
+
+  double var = 10.0;          // значение переменной var равно 10 (дюймов)
+  cout << "var = " << var << "дюймов" << endl;
+
+  centimize ( &var );         // переведем дюймы в сантиметры
+  cout << "var= " << var << "сантиметров" << endl;
+
+  return 0;
+}
+///////////////////////////////////////////////////////////
+void centimize ( double* ptrd )
+{
+ // *ptrd *= 2.54;              // *ptrd С это то же самое, что и var
+*ptrd = ptrd * 2.54;
+}
+
+

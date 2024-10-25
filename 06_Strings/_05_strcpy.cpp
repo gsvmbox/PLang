@@ -1,0 +1,31 @@
+// _05_strcpy.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+// strcopy1.cpp
+// копирование строки с использованием цикла
+#include <Windows.h>
+#include <iostream>
+#include <cstring>
+using namespace std;
+///////////////////////////////////////////////////////////
+int main ( )
+{
+   SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+	// исходная строка
+  char str1 [ ] = "Копирование строки в  цикле";
+
+  const int MAX = 80; // максимальная длина строки
+  char str2 [ MAX ];  // новая строка
+
+  for ( int j = 0; j < strlen ( str1 ); j++ ) // копируем strlen ( str1 )
+    str2 [ j ] = str1 [ j ];                  // символов из str1 в str2
+  
+  str2 [ strlen ( str1 ) ] = '\0';                          // завершаем строку нулем
+  cout << str2 <<" "<< endl<<strlen(str1)<< endl;                       // и выводим на экран
+
+  return 0;
+}
+
+
