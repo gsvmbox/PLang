@@ -16,13 +16,14 @@ int main(int argc, char* argv[])
 
 	setlocale(LC_ALL, "Russian");
 	
-	float p;
+	float p, alf;
 	const float x = -2.5, y = 2.0;
 	const float pi = 3.1415926;
-	const float Rad = 45 / 180 * pi;
+	const float Rad = pi / 180;
 
-
-	p = x * y + sqrt(y) + 1 / (sin(x * Rad) + cos(y * Rad));
+	cout << "Введите угол alf: ";
+	cin >> alf;
+	p = x * y + sqrt(y) + 1 / (sin(alf * Rad) + cos(alf * Rad));
 	cout << "Result is: " << p << endl << '\n';
 
 	//явное преобразование типов
@@ -32,8 +33,9 @@ int main(int argc, char* argv[])
 	cout << "... to char: " << static_cast<char>(p) << endl << endl;
 
 	//преобразование формата вывода
-	int aa = 123;
+	int aa = 23;
 
+	cout << "Binary " << "aa = " << bitset<8>(aa) << endl; 
 	cout << "Binary " << "aa = " << bitset<16>(aa) << endl;
 	cout << "Hex " << "aa = " << hex << aa << dec << endl << endl;
 
@@ -63,9 +65,28 @@ int main(int argc, char* argv[])
 	//Размеры встроенных типов данных
 	cout << "Build-in INT_type size:" << endl;
 	cout << "from " << numeric_limits<int>::min() << " to " << numeric_limits<int>::max() << endl;
-	cout << "size " << sizeof(int);
+	cout << "size " << sizeof(int)<<"\n\n";
 
-	//cin.get();
+	bool flag = false;
+	int num1 = 7, num2=3;
+		char ch = 'A';
+	double res = 1.3;
+
+
+
+	num1 = 0b01111111111111111111111111111111;
+	cout << "num1 = " << num1 << std::endl;
+
+	num1 = 0xabcde;
+	cout << "num1 = " << num1 << std::endl;
+
+	short int shortnum = 0b0111111111111111;
+	long int longnum = 12345;
+	unsigned int unint = 0b11111111111111111111111111111111;
+	cout << "shortnum = " << shortnum << std::endl;
+	cout << "longnum = " << longnum << std::endl;
+	cout << "unint = " << unint << std::endl;
+
 	return 0;
 }
 
